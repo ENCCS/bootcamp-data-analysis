@@ -1,5 +1,5 @@
-LESSON NAME
-===========
+Data Analysis Bootcamp 
+======================
 
 Intro
 
@@ -10,26 +10,34 @@ Intro
    prerequisites
 
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Preparation
 
-.. csv-table::
-   :widths: auto
-   :delim: ;
-
-   20 min ; :doc:`filename`
-
+   setup
 
 .. toctree::
    :maxdepth: 1
-   :caption: The lesson
+   :caption: Navigating the Shell
 
+   shell_intro 
+   filedir
 
 .. toctree::
    :maxdepth: 1
    :caption: Reference
 
-   quick-reference
    guide
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: About
 
+   All lessons <https://enccs.se/lessons/>
+   ENCCS <https://enccs.se/>
+
+   
+   
 
 
 .. _learner-personas:
