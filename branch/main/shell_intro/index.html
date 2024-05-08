@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introducing the shell &mdash; Bootcamp in data analysis  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=187304be"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Navigating Files and Directories" href="../filedir/" />
+    <link rel="prev" title="Installation and configuration" href="../setup/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Bootcamp in data analysis
+              <img src="../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../setup/">Installation and configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Navigating the Shell</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introducing the shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-shell">The Shell</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../filedir/">Navigating Files and Directories</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://enccs.se/lessons/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://enccs.se/">ENCCS</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Bootcamp in data analysis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introducing the shell</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/bootcamp-data-analysis/blob/main/content/shell_intro.ipynb" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introducing-the-shell">
+<h1>Introducing the shell<a class="headerlink" href="#introducing-the-shell" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Explain how the shell relates to the keyboard, the screen, the operating system, and users’ programs.</p></li>
+<li><p>Explain when and why command-line interfaces should be used instead of graphical interfaces.</p></li>
+</ul>
+</div>
+<div class="admonition-questions questions admonition" id="questions-0">
+<p class="admonition-title">Questions</p>
+<ul class="simple">
+<li><p>What is a command shell and why would I use one?</p></li>
+</ul>
+</div>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>Humans and computers commonly interact in many different ways, such as through a keyboard and mouse,
+touch screen interfaces, or using speech recognition systems.
+The most widely used way to interact with personal computers is called a
+<strong>graphical user interface</strong> (GUI).
+With a GUI, we give instructions by clicking a mouse and using menu-driven interactions.</p>
+<p>While the visual aid of a GUI makes it intuitive to learn,
+this way of delivering instructions to a computer scales very poorly.
+Imagine the following task:
+for a literature search, you have to copy the third line of one thousand text files in one thousand
+different directories and paste it into a single file.
+Using a GUI, you would not only be clicking at your desk for several hours,
+but you could potentially also commit an error in the process of completing this repetitive task.
+This is where we take advantage of the Unix shell.
+The Unix shell is both a <strong>command-line interface</strong> (CLI) and a scripting language,
+allowing such repetitive tasks to be done automatically and fast.
+With the proper commands, the shell can repeat tasks with or without some modification
+as many times as we want.
+Using the shell, the task in the literature example can be accomplished in seconds.</p>
+</section>
+<section id="the-shell">
+<h2>The Shell<a class="headerlink" href="#the-shell" title="Link to this heading"></a></h2>
+<p>The shell is a program where users can type commands.
+With the shell, it’s possible to invoke complicated programs like climate modeling software
+or simple commands that create an empty directory with only one line of code.
+The most popular Unix shell is Bash (the Bourne Again SHell —
+so-called because it’s derived from a shell written by Stephen Bourne).
+Bash is the default shell on most modern implementations of Unix and in most packages that provide
+Unix-like tools for Windows.
+Note that ‘Git Bash’ is a piece of software that enables Windows users to use a Bash like interface
+when interacting with Git.</p>
+<p>Using the shell will take some effort and some time to learn.
+While a GUI presents you with choices to select, CLI choices are not automatically presented to you,
+so you must learn a few commands like new vocabulary in a language you’re studying.
+However, unlike a spoken language, a small number of “words” (i.e. commands) gets you a long way,
+and we’ll cover those essential few today.</p>
+<p>The grammar of a shell allows you to combine existing tools into powerful
+pipelines and handle large volumes of data automatically. Sequences of
+commands can be written into a <em>script</em>, improving the reproducibility of
+workflows.</p>
+<p>In addition, the command line is often the easiest way to interact with remote machines
+and supercomputers.
+Familiarity with the shell is near essential to run a variety of specialized tools and resources
+including high-performance computing systems.
+As clusters and cloud computing systems become more popular for scientific data crunching,
+being able to interact with the shell is becoming a necessary skill.
+We can build on the command-line skills covered here
+to tackle a wide range of scientific questions and computational challenges.</p>
+<p>Let’s get started.</p>
+<p>When the shell is first opened, you are presented with a <strong>prompt</strong>,
+indicating that the shell is waiting for input.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
+<p>The shell typically uses <code class="docutils literal notranslate"><span class="pre">$</span> </code> as the prompt, but may use a different symbol.
+In the examples for this lesson, we’ll show the prompt as <code class="docutils literal notranslate"><span class="pre">$</span> </code>.
+Most importantly, <em>do not type the prompt</em> when typing commands.
+Only type the command that follows the prompt.
+This rule applies both in these lessons and in lessons from other sources.
+Also note that after you type a command, you have to press the <kbd>Enter</kbd> key to execute it.</p>
+<p>The prompt is followed by a <strong>text cursor</strong>, a character that indicates the position where your
+typing will appear.
+The cursor is usually a flashing or solid block, but it can also be an underscore or a pipe.
+You may have seen it in a text editor program, for example.</p>
+<p>Note that your prompt might look a little different. In particular, most popular shell
+environments by default put your user name and the host name before the <code class="docutils literal notranslate"><span class="pre">$</span></code>. Such
+a prompt might look like, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nelle@localhost<span class="w"> </span>$
+</pre></div>
+</div>
+<p>The prompt might even include more than this. Do not worry if your prompt is not
+just a short <code class="docutils literal notranslate"><span class="pre">$</span> </code>. This lesson does not depend on this additional information and it
+should also not get in your way. The only important item to focus on is the <code class="docutils literal notranslate"><span class="pre">$</span> </code>
+character itself and we will see later why.</p>
+<p>So let’s try our first command, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, which is short for listing.
+This command will list the contents of the current directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Desktop     Downloads   Movies      Pictures</span>
+<span class="go">Documents   Library     Music       Public</span>
+</pre></div>
+</div>
+<div class="admonition-command-not-found callout admonition" id="callout-0">
+<p class="admonition-title">Command not found</p>
+<p>If the shell can’t find a program whose name is the command you typed, it
+will print an error message such as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ks
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">ks: command not found</span>
+</pre></div>
+</div>
+<p>This might happen if the command was mis-typed or if the program corresponding to that command
+is not installed.</p>
+</div>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>A shell is a program whose primary purpose is to read commands and run other programs.</p></li>
+<li><p>This lesson uses Bash, the default shell in many implementations of Unix.</p></li>
+<li><p>Programs can be run in Bash by entering commands at the command-line prompt.</p></li>
+<li><p>The shell’s main advantages are its high action-to-keystroke ratio, its support for automating repetitive tasks, and its capacity to access networked machines.</p></li>
+<li><p>A significant challenge when using the shell can be knowing what commands need to be run and how to run them.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../setup/" class="btn btn-neutral float-left" title="Installation and configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../filedir/" class="btn btn-neutral float-right" title="Navigating Files and Directories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

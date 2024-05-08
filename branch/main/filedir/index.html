@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigating Files and Directories &mdash; Bootcamp in data analysis  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=187304be"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Instructor guide" href="../guide/" />
+    <link rel="prev" title="Introducing the shell" href="../shell_intro/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Bootcamp in data analysis
+              <img src="../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../setup/">Installation and configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Navigating the Shell</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../shell_intro/">Introducing the shell</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Navigating Files and Directories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting help</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-help-option">The <code class="docutils literal notranslate"><span class="pre">--help</span></code> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-man-command">The <code class="docutils literal notranslate"><span class="pre">man</span></code> command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exploring-other-directories">Exploring Other Directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-syntax-of-a-shell-command">General Syntax of a Shell Command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://enccs.se/lessons/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://enccs.se/">ENCCS</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Bootcamp in data analysis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Navigating Files and Directories</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/bootcamp-data-analysis/blob/main/content/filedir.ipynb" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="navigating-files-and-directories">
+<h1>Navigating Files and Directories<a class="headerlink" href="#navigating-files-and-directories" title="Link to this heading"></a></h1>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>teaching: 30 min</p></li>
+<li><p>exercises: 10 min</p></li>
+</ul>
+</div>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Explain the similarities and differences between a file and a directory.</p></li>
+<li><p>Translate an absolute path into a relative path and vice versa.</p></li>
+<li><p>Construct absolute and relative paths that identify specific files and directories.</p></li>
+<li><p>Use options and arguments to change the behaviour of a shell command.</p></li>
+<li><p>Demonstrate the use of tab completion and explain its advantages.</p></li>
+</ul>
+</div>
+<div class="admonition-questions questions admonition" id="questions-0">
+<p class="admonition-title">Questions</p>
+<ul class="simple">
+<li><p>How can I move around on my computer?</p></li>
+<li><p>How can I see what files and directories I have?</p></li>
+<li><p>How can I specify the location of a file or directory on my computer?</p></li>
+</ul>
+</div>
+<p>The part of the operating system responsible for managing files and directories
+is called the <strong>file system</strong>.
+It organizes our data into files,
+which hold information,
+and directories (also called ‘folders’),
+which hold files or other directories.</p>
+<p>Several commands are frequently used to create, inspect, rename, and delete files and directories.
+To start exploring them, we’ll go to our open shell window.</p>
+<p>First, let’s find out where we are by running a command called <code class="docutils literal notranslate"><span class="pre">pwd</span></code>
+(which stands for ‘print working directory’). Directories are like <em>places</em> — at any time
+while we are using the shell, we are in exactly one place called
+our <strong>current working directory</strong>. Commands mostly read and write files in the
+current working directory, i.e. ‘here’, so knowing where you are before running
+a command is important. <code class="docutils literal notranslate"><span class="pre">pwd</span></code> shows you where you are:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/nelle</span>
+</pre></div>
+</div>
+<p>Here,
+the computer’s response is <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>,
+which is Nelle’s <strong>home directory</strong>:</p>
+<div class="admonition-home-directory-variation callout admonition" id="callout-0">
+<p class="admonition-title">Home Directory Variation</p>
+<p>The home directory path will look different on different operating systems.
+On Linux, it may look like <code class="docutils literal notranslate"><span class="pre">/home/nelle</span></code>,
+and on Windows, it will be similar to <code class="docutils literal notranslate"><span class="pre">C:\Documents</span> <span class="pre">and</span> <span class="pre">Settings\nelle</span></code> or
+<code class="docutils literal notranslate"><span class="pre">C:\Users\nelle</span></code>.
+(Note that it may look slightly different for different versions of Windows.)
+In future examples, we’ve used Mac output as the default - Linux and Windows
+output may differ slightly but should be generally similar.</p>
+<p>We will also assume that your <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command returns your user’s home directory.
+If <code class="docutils literal notranslate"><span class="pre">pwd</span></code> returns something different, you may need to navigate there using <code class="docutils literal notranslate"><span class="pre">cd</span></code>
+or some commands in this lesson will not work as written.
+See <a class="reference internal" href="#exploring-other-directories"><span class="xref myst">Exploring Other Directories</span></a> for more details
+on the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command.</p>
+</div>
+<p>To understand what a ‘home directory’ is,
+let’s have a look at how the file system as a whole is organized.  For the
+sake of this example, we’ll be
+illustrating the filesystem on our scientist Nelle’s computer.  After this
+illustration, you’ll be learning commands to explore your own filesystem,
+which will be constructed in a similar way, but not be exactly identical.</p>
+<p>On Nelle’s computer, the filesystem looks like this:</p>
+<p><img alt="" src="../_images/filesystem.svg" /></p>
+<p>The filesystem looks like an upside down tree.
+The topmost directory  is the <strong>root directory</strong>
+that holds everything else.
+We refer to it using a slash character, <code class="docutils literal notranslate"><span class="pre">/</span></code>, on its own;
+this character is the leading slash in <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>.</p>
+<p>Inside that directory are several other directories:
+<code class="docutils literal notranslate"><span class="pre">bin</span></code> (which is where some built-in programs are stored),
+<code class="docutils literal notranslate"><span class="pre">data</span></code> (for miscellaneous data files),
+<code class="docutils literal notranslate"><span class="pre">Users</span></code> (where users’ personal directories are located),
+<code class="docutils literal notranslate"><span class="pre">tmp</span></code> (for temporary files that don’t need to be stored long-term),
+and so on.</p>
+<p>We know that our current working directory <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code> is stored inside <code class="docutils literal notranslate"><span class="pre">/Users</span></code>
+because <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is the first part of its name.
+Similarly,
+we know that <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is stored inside the root directory <code class="docutils literal notranslate"><span class="pre">/</span></code>
+because its name begins with <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+<div class="admonition-slashes callout admonition" id="callout-1">
+<p class="admonition-title">Slashes</p>
+<p>Notice that there are two meanings for the <code class="docutils literal notranslate"><span class="pre">/</span></code> character.
+When it appears at the front of a file or directory name,
+it refers to the root directory. When it appears <em>inside</em> a path,
+it’s just a separator.</p>
+</div>
+<p>Underneath <code class="docutils literal notranslate"><span class="pre">/Users</span></code>,
+we find one directory for each user with an account on Nelle’s machine,
+her colleagues <em>imhotep</em> and <em>larry</em>.</p>
+<p><img alt="" src="../_images/home-directories.svg" /></p>
+<p>The user <em>imhotep</em>’s files are stored in <code class="docutils literal notranslate"><span class="pre">/Users/imhotep</span></code>,
+user <em>larry</em>’s in <code class="docutils literal notranslate"><span class="pre">/Users/larry</span></code>,
+and Nelle’s in <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>. Nelle is the user in our
+examples here; therefore, we get <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code> as our home directory.
+Typically, when you open a new command prompt, you will be in
+your home directory to start.</p>
+<p>Now let’s learn the command that will let us see the contents of our
+own filesystem.  We can see what’s in our home directory by running <code class="docutils literal notranslate"><span class="pre">ls</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Applications Documents    Library      Music        Public</span>
+<span class="go">Desktop      Downloads    Movies       Pictures</span>
+</pre></div>
+</div>
+<p>(Again, your results may be slightly different depending on your operating
+system and how you have customized your filesystem.)</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> prints the names of the files and directories in the current directory.
+We can make its output more comprehensible by using the <code class="docutils literal notranslate"><span class="pre">-F</span></code> <strong>option</strong>
+which tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to classify the output
+by adding a marker to file and directory names to indicate what they are:</p>
+<ul class="simple">
+<li><p>a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> indicates that this is a directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> indicates a link</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> indicates an executable</p></li>
+</ul>
+<p>Depending on your shell’s default settings,
+the shell might also use colors to indicate whether each entry is a file or
+directory.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Applications/ Documents/    Library/      Music/        Public/</span>
+<span class="go">Desktop/      Downloads/    Movies/       Pictures/</span>
+</pre></div>
+</div>
+<p>Here,
+we can see that the home directory contains only <strong>sub-directories</strong>.
+Any names in the output that don’t have a classification symbol
+are <strong>files</strong> in the current working directory.</p>
+<div class="admonition-clearing-your-terminal callout admonition" id="callout-2">
+<p class="admonition-title">Clearing your terminal</p>
+<p>If your screen gets too cluttered, you can clear your terminal using the
+<code class="docutils literal notranslate"><span class="pre">clear</span></code> command. You can still access previous commands using <kbd>↑</kbd>
+and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.</p>
+</div>
+<section id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> has lots of other <strong>options</strong>. There are two common ways to find out how
+to use a command and what options it accepts —
+<strong>depending on your environment, you might find that only one of these ways works:</strong></p>
+<ol class="arabic simple">
+<li><p>We can pass a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option to any command (available on Linux and Git Bash), for example:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>--help
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>We can read its manual with <code class="docutils literal notranslate"><span class="pre">man</span></code> (available on Linux and macOS):</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>man<span class="w"> </span>ls
+</pre></div>
+</div>
+<p>We’ll describe both ways next.</p>
+<div class="admonition-help-for-built-in-commands callout admonition" id="callout-3">
+<p class="admonition-title">Help for built-in commands</p>
+<p>Some commands are built in to the Bash shell, rather than existing as separate
+programs on the filesystem. One example is the <code class="docutils literal notranslate"><span class="pre">cd</span></code> (change directory) command.
+If you get a message like <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">manual</span> <span class="pre">entry</span> <span class="pre">for</span> <span class="pre">cd</span></code>, try <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">cd</span></code> instead. The
+<code class="docutils literal notranslate"><span class="pre">help</span></code> command is how you get usage information for
+<a class="reference external" href="https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html">Bash built-ins</a>.</p>
+</div>
+<section id="the-help-option">
+<h3>The <code class="docutils literal notranslate"><span class="pre">--help</span></code> option<a class="headerlink" href="#the-help-option" title="Link to this heading"></a></h3>
+<p>Most bash commands and programs that people have written to be
+run from within bash, support a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option that displays more
+information on how to use the command or program.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: ls [OPTION]... [FILE]...</span>
+<span class="go">List information about the FILEs (the current directory by default).</span>
+<span class="go">Sort entries alphabetically if neither -cftuvSUX nor --sort is specified.</span>
+
+<span class="go">Mandatory arguments to long options are mandatory for short options, too.</span>
+<span class="go">  -a, --all                  do not ignore entries starting with .</span>
+<span class="go">  -A, --almost-all           do not list implied . and ..</span>
+<span class="go">      --author               with -l, print the author of each file</span>
+<span class="go">  -b, --escape               print C-style escapes for nongraphic characters</span>
+<span class="go">      --block-size=SIZE      scale sizes by SIZE before printing them; e.g.,</span>
+<span class="go">                               &#39;--block-size=M&#39; prints sizes in units of</span>
+<span class="go">                               1,048,576 bytes; see SIZE format below</span>
+<span class="go">  -B, --ignore-backups       do not list implied entries ending with ~</span>
+<span class="go">  -c                         with -lt: sort by, and show, ctime (time of last</span>
+<span class="go">                               modification of file status information);</span>
+<span class="go">                               with -l: show ctime and sort by name;</span>
+<span class="go">                               otherwise: sort by ctime, newest first</span>
+<span class="go">  -C                         list entries by columns</span>
+<span class="go">      --color[=WHEN]         colorize the output; WHEN can be &#39;always&#39; (default</span>
+<span class="go">                               if omitted), &#39;auto&#39;, or &#39;never&#39;; more info below</span>
+<span class="go">  -d, --directory            list directories themselves, not their contents</span>
+<span class="go">  -D, --dired                generate output designed for Emacs&#39; dired mode</span>
+<span class="go">  -f                         do not sort, enable -aU, disable -ls --color</span>
+<span class="go">  -F, --classify             append indicator (one of */=&gt;@|) to entries</span>
+<span class="go">...        ...        ...</span>
+</pre></div>
+</div>
+<div class="admonition-when-to-use-short-or-long-options callout admonition" id="callout-4">
+<p class="admonition-title">When to use short or long options</p>
+<p>When options exist as both short and long options:</p>
+<ul class="simple">
+<li><p>Use the short option when typing commands directly into the
+shell to minimize keystrokes and get your task done faster.</p></li>
+<li><p>Use the long option in scripts to provide clarity.
+It will be read many times and typed once.</p></li>
+</ul>
+</div>
+<div class="admonition-unsupported-command-line-options callout admonition" id="callout-5">
+<p class="admonition-title">Unsupported command-line options</p>
+<p>If you try to use an option that is not supported, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and other commands
+will usually print an error message similar to:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-j
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">option</span> <span class="o">--</span> <span class="s1">&#39;j&#39;</span>
+<span class="n">Try</span> <span class="s1">&#39;ls --help&#39;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="the-man-command">
+<h3>The <code class="docutils literal notranslate"><span class="pre">man</span></code> command<a class="headerlink" href="#the-man-command" title="Link to this heading"></a></h3>
+<p>The other way to learn about <code class="docutils literal notranslate"><span class="pre">ls</span></code> is to type</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>man<span class="w"> </span>ls
+</pre></div>
+</div>
+<p>This command will turn your terminal into a page with a description
+of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command and its options.</p>
+<p>To navigate through the <code class="docutils literal notranslate"><span class="pre">man</span></code> pages,
+you may use <kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line,
+or try <kbd>B</kbd> and <kbd>Spacebar</kbd> to skip up and down by a full page.
+To search for a character or word in the <code class="docutils literal notranslate"><span class="pre">man</span></code> pages,
+use <kbd>/</kbd> followed by the character or word you are searching for.
+Sometimes a search will result in multiple hits.
+If so, you can move between hits using <kbd>N</kbd> (for moving forward) and
+<kbd>Shift</kbd>+<kbd>N</kbd> (for moving backward).</p>
+<p>To <strong>quit</strong> the <code class="docutils literal notranslate"><span class="pre">man</span></code> pages, press <kbd>Q</kbd>.</p>
+<div class="admonition-manual-pages-on-the-web callout admonition" id="callout-6">
+<p class="admonition-title">Manual pages on the web</p>
+<p>Of course, there is a third way to access help for commands:
+searching the internet via your web browser.
+When using internet search, including the phrase <code class="docutils literal notranslate"><span class="pre">unix</span> <span class="pre">man</span> <span class="pre">page</span></code> in your search
+query will help to find relevant results.</p>
+<p>GNU provides links to its
+<a class="reference external" href="https://www.gnu.org/manual/manual.html">manuals</a> including the
+<a class="reference external" href="https://www.gnu.org/software/coreutils/manual/coreutils.html">core GNU utilities</a>,
+which covers many commands introduced within this lesson.</p>
+</div>
+<p>````{challenge} Exploring More <code class="docutils literal notranslate"><span class="pre">ls</span></code> Options</p>
+<p>You can also use two options at the same time. What does the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> do when used
+with the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option? What about if you use both the <code class="docutils literal notranslate"><span class="pre">-l</span></code> and the <code class="docutils literal notranslate"><span class="pre">-h</span></code> option?</p>
+<p>Some of its output is about properties that we do not cover in this lesson (such
+as file permissions and ownership), but the rest should be useful
+nevertheless.</p>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-l</span></code> option makes <code class="docutils literal notranslate"><span class="pre">ls</span></code> use a <strong>l</strong>ong listing format, showing not only
+the file/directory names but also additional information, such as the file size
+and the time of its last modification. If you use both the <code class="docutils literal notranslate"><span class="pre">-h</span></code> option and the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option,
+this makes the file size ‘<strong>h</strong>uman readable’, i.e. displaying something like <code class="docutils literal notranslate"><span class="pre">5.3K</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">5369</span></code>.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="admonition-listing-in-reverse-chronological-order exercise important admonition" id="exercise-0">
+<p class="admonition-title">Listing in Reverse Chronological Order</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">ls</span></code> lists the contents of a directory in alphabetical
+order by name. The command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-t</span></code> lists items by time of last
+change instead of alphabetically. The command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-r</span></code> lists the
+contents of a directory in reverse order.
+Which file is displayed last when you combine the <code class="docutils literal notranslate"><span class="pre">-t</span></code> and <code class="docutils literal notranslate"><span class="pre">-r</span></code> options?
+Hint: You may need to use the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option to see the
+last changed dates.</p>
+<div class="admonition-solution solution important dropdown admonition" id="solution-1">
+<p class="admonition-title">Solution</p>
+<p>The most recently changed file is listed last when using <code class="docutils literal notranslate"><span class="pre">-rt</span></code>. This
+can be very useful for finding your most recent edits or checking to
+see if a new output file was written.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="exploring-other-directories">
+<h2>Exploring Other Directories<a class="headerlink" href="#exploring-other-directories" title="Link to this heading"></a></h2>
+<p>Not only can we use <code class="docutils literal notranslate"><span class="pre">ls</span></code> on the current working directory,
+but we can use it to list the contents of a different directory.
+Let’s take a look at our <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">Desktop</span></code>,
+i.e.,
+the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the <code class="docutils literal notranslate"><span class="pre">-F</span></code> <strong>option</strong> and the <a class="reference external" href="https://swcarpentry.github.io/shell-novice/reference.html#argument"><strong>argument</strong></a>  <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>.
+The argument <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> that
+we want a listing of something other than our current working directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>Desktop
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">shell-lesson-data/</span>
+</pre></div>
+</div>
+<p>Note that if a directory named <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> does not exist in your current working directory,
+this command will return an error. Typically, a <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory exists in your
+home directory, which we assume is the current working directory of your bash shell.</p>
+<p>Your output should be a list of all the files and sub-directories in your
+Desktop directory, including the <code class="docutils literal notranslate"><span class="pre">shell-lesson-data</span></code> directory you downloaded at
+the <a class="reference internal" href="#../learners/setup.md"><span class="xref myst">setup for this lesson</span></a>. (On most systems, the
+contents of the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory in the shell will show up as icons in a graphical
+user interface behind all the open windows. See if this is the case for you.)</p>
+<p>Organizing things hierarchically helps us keep track of our work. While it’s
+possible to put hundreds of files in our home directory just as it’s possible to
+pile hundreds of printed papers on our desk, it’s much easier to find things when
+they’ve been organized into sensibly-named subdirectories.</p>
+<p>Now that we know the <code class="docutils literal notranslate"><span class="pre">shell-lesson-data</span></code> directory is located in our Desktop directory, we
+can do two things.</p>
+<p>First, using the same strategy as before, we can look at its contents by passing
+a directory name to <code class="docutils literal notranslate"><span class="pre">ls</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>Desktop/shell-lesson-data
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">exercise-data/  north-pacific-gyre/</span>
+</pre></div>
+</div>
+<p>Second, we can actually change our location to a different directory, so
+we are no longer located in
+our home directory.</p>
+<p>The command to change locations is <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by a
+directory name to change our working directory.
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> stands for ‘change directory’,
+which is a bit misleading.
+The command doesn’t change the directory;
+it changes the shell’s current working directory.
+In other words it changes the shell’s settings for what directory we are in.
+The <code class="docutils literal notranslate"><span class="pre">cd</span></code> command is akin to double-clicking a folder in a graphical interface
+to get into that folder.</p>
+<p>Let’s say we want to move into the <code class="docutils literal notranslate"><span class="pre">exercise-data</span></code> directory we saw above. We can
+use the following series of commands to get there:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Desktop
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>shell-lesson-data
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>exercise-data
+</pre></div>
+</div>
+<p>These commands will move us from our home directory into our Desktop directory, then into
+the <code class="docutils literal notranslate"><span class="pre">shell-lesson-data</span></code> directory, then into the <code class="docutils literal notranslate"><span class="pre">exercise-data</span></code> directory.
+You will notice that <code class="docutils literal notranslate"><span class="pre">cd</span></code> doesn’t print anything. This is normal.
+Many shell commands will not output anything to the screen when successfully executed.
+But if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after it, we can see that we are now
+in <code class="docutils literal notranslate"><span class="pre">/Users/nelle/Desktop/shell-lesson-data/exercise-data</span></code>.</p>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code> without arguments now,
+it lists the contents of <code class="docutils literal notranslate"><span class="pre">/Users/nelle/Desktop/shell-lesson-data/exercise-data</span></code>,
+because that’s where we now are:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/nelle/Desktop/shell-lesson-data/exercise-data</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">alkanes/  animal-counts/  creatures/  numbers.txt  writing/</span>
+</pre></div>
+</div>
+<p>We now know how to go down the directory tree (i.e. how to go into a subdirectory),
+but how do we go up (i.e. how do we leave a directory and go into its parent directory)?
+We might try the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>shell-lesson-data
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">bash</span><span class="p">:</span> <span class="n">cd</span><span class="p">:</span> <span class="n">shell</span><span class="o">-</span><span class="n">lesson</span><span class="o">-</span><span class="n">data</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+</pre></div>
+</div>
+<p>But we get an error! Why is this?</p>
+<p>With our methods so far,
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> can only see sub-directories inside your current directory. There are
+different ways to see directories above your current location; we’ll start
+with the simplest.</p>
+<p>There is a shortcut in the shell to move up one directory level. It works as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a special directory name meaning
+“the directory containing this one”,
+or more succinctly,
+the <strong>parent</strong> of the current directory.
+Sure enough,
+if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>, we’re back in <code class="docutils literal notranslate"><span class="pre">/Users/nelle/Desktop/shell-lesson-data</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/nelle/Desktop/shell-lesson-data</span>
+</pre></div>
+</div>
+<p>The special directory <code class="docutils literal notranslate"><span class="pre">..</span></code> doesn’t usually show up when we run <code class="docutils literal notranslate"><span class="pre">ls</span></code>. If we want
+to display it, we can add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option to <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>-a
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">./  ../  exercise-data/  north-pacific-gyre/</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-a</span></code> stands for ‘show all’ (including hidden files);
+it forces <code class="docutils literal notranslate"><span class="pre">ls</span></code> to show us file and directory names that begin with <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+such as <code class="docutils literal notranslate"><span class="pre">..</span></code> (which, if we’re in <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>, refers to the <code class="docutils literal notranslate"><span class="pre">/Users</span></code> directory).
+As you can see,
+it also displays another special directory that’s just called <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+which means ‘the current working directory’.
+It may seem redundant to have a name for it,
+but we’ll see some uses for it soon.</p>
+<p>Note that in most command line tools, multiple options can be combined
+with a single <code class="docutils literal notranslate"><span class="pre">-</span></code> and no spaces between the options; <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">-a</span></code> is
+equivalent to <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-Fa</span></code>.</p>
+<div class="admonition-other-hidden-files callout admonition" id="callout-7">
+<p class="admonition-title">Other Hidden Files</p>
+<p>In addition to the hidden directories <code class="docutils literal notranslate"><span class="pre">..</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code>, you may also see a file
+called <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>. This file usually contains shell configuration
+settings. You may also see other files and directories beginning
+with <code class="docutils literal notranslate"><span class="pre">.</span></code>. These are usually files and directories that are used to configure
+different programs on your computer. The prefix <code class="docutils literal notranslate"><span class="pre">.</span></code> is used to prevent these
+configuration files from cluttering the terminal when a standard <code class="docutils literal notranslate"><span class="pre">ls</span></code> command
+is used.</p>
+</div>
+<p>These three commands are the basic commands for navigating the filesystem on your computer:
+<code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, and <code class="docutils literal notranslate"><span class="pre">cd</span></code>. Let’s explore some variations on those commands. What happens
+if you type <code class="docutils literal notranslate"><span class="pre">cd</span></code> on its own, without giving
+a directory?</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span>
+</pre></div>
+</div>
+<p>How can you check what happened? <code class="docutils literal notranslate"><span class="pre">pwd</span></code> gives us the answer!</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/nelle</span>
+</pre></div>
+</div>
+<p>It turns out that <code class="docutils literal notranslate"><span class="pre">cd</span></code> without an argument will return you to your home directory,
+which is great if you’ve got lost in your own filesystem.</p>
+<p>Let’s try returning to the <code class="docutils literal notranslate"><span class="pre">exercise-data</span></code> directory from before. Last time, we used
+three commands, but we can actually string together the list of directories
+to move to <code class="docutils literal notranslate"><span class="pre">exercise-data</span></code> in one step:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Desktop/shell-lesson-data/exercise-data
+</pre></div>
+</div>
+<p>Check that we’ve moved to the right place by running <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code>.</p>
+<p>If we want to move up one level from the data directory, we could use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>.  But
+there is another way to move to any directory, regardless of your
+current location.</p>
+<p>So far, when specifying directory names, or even a directory path (as above),
+we have been using <strong>relative paths</strong>.  When you use a relative path with a command
+like <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">cd</span></code>, it tries to find that location from where we are,
+rather than from the root of the file system.</p>
+<p>However, it is possible to specify the <strong>absolute path</strong> to a directory by
+including its entire path from the root directory, which is indicated by a
+leading slash. The leading <code class="docutils literal notranslate"><span class="pre">/</span></code> tells the computer to follow the path from
+the root of the file system, so it always refers to exactly one directory,
+no matter where we are when we run the command.</p>
+<p>This allows us to move to our <code class="docutils literal notranslate"><span class="pre">shell-lesson-data</span></code> directory from anywhere on
+the filesystem (including from inside <code class="docutils literal notranslate"><span class="pre">exercise-data</span></code>). To find the absolute path
+we’re looking for, we can use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and then extract the piece we need
+to move to <code class="docutils literal notranslate"><span class="pre">shell-lesson-data</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/nelle/Desktop/shell-lesson-data/exercise-data</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>/Users/nelle/Desktop/shell-lesson-data
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code> to ensure that we’re in the directory we expect.</p>
+<div class="admonition-two-more-shortcuts callout admonition" id="callout-8">
+<p class="admonition-title">Two More Shortcuts</p>
+<p>The shell interprets a tilde (<code class="docutils literal notranslate"><span class="pre">~</span></code>) character at the start of a path to
+mean “the current user’s home directory”. For example, if Nelle’s home
+directory is <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>, then <code class="docutils literal notranslate"><span class="pre">~/data</span></code> is equivalent to
+<code class="docutils literal notranslate"><span class="pre">/Users/nelle/data</span></code>. This only works if it is the first character in the
+path; <code class="docutils literal notranslate"><span class="pre">here/there/~/elsewhere</span></code> is <em>not</em> <code class="docutils literal notranslate"><span class="pre">here/there/Users/nelle/elsewhere</span></code>.</p>
+<p>Another shortcut is the <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash) character. <code class="docutils literal notranslate"><span class="pre">cd</span></code> will translate <code class="docutils literal notranslate"><span class="pre">-</span></code> into
+<em>the previous directory I was in</em>, which is faster than having to remember,
+then type, the full path.  This is a <em>very</em> efficient way of moving
+<em>back and forth between two directories</em> – i.e. if you execute <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> twice,
+you end up back in the starting directory.</p>
+<p>The difference between <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> is
+that the former brings you <em>up</em>, while the latter brings you <em>back</em>.</p>
+<hr class="docutils" />
+<p>Try it!
+First navigate to <code class="docutils literal notranslate"><span class="pre">~/Desktop/shell-lesson-data</span></code> (you should already be there).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/Desktop/shell-lesson-data
+</pre></div>
+</div>
+</div>
+<p>Then <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the <code class="docutils literal notranslate"><span class="pre">exercise-data/creatures</span></code> directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>exercise-data/creatures
+</pre></div>
+</div>
+<p>Now if you run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>-
+</pre></div>
+</div>
+<p>you’ll see you’re back in <code class="docutils literal notranslate"><span class="pre">~/Desktop/shell-lesson-data</span></code>.
+Run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> again and you’re back in <code class="docutils literal notranslate"><span class="pre">~/Desktop/shell-lesson-data/exercise-data/creatures</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="admonition-absolute-vs-relative-paths exercise important admonition" id="exercise-1">
+<p class="admonition-title">Absolute vs Relative Paths</p>
+<p>Starting from <code class="docutils literal notranslate"><span class="pre">/Users/nelle/data</span></code>,
+which of the following commands could Nelle use to navigate to her home directory,
+which is <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/nelle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../..</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">home</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/data/..</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code></p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-2">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>No: <code class="docutils literal notranslate"><span class="pre">.</span></code> stands for the current directory.</p></li>
+<li><p>No: <code class="docutils literal notranslate"><span class="pre">/</span></code> stands for the root directory.</p></li>
+<li><p>No: Nelle’s home directory is <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>.</p></li>
+<li><p>No: this command goes up two levels, i.e. ends in <code class="docutils literal notranslate"><span class="pre">/Users</span></code>.</p></li>
+<li><p>Yes: <code class="docutils literal notranslate"><span class="pre">~</span></code> stands for the user’s home directory, in this case <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>.</p></li>
+<li><p>No: this command would navigate into a directory <code class="docutils literal notranslate"><span class="pre">home</span></code> in the current directory
+if it exists.</p></li>
+<li><p>Yes: unnecessarily complicated, but correct.</p></li>
+<li><p>Yes: shortcut to go back to the user’s home directory.</p></li>
+<li><p>Yes: goes up one level.</p></li>
+</ol>
+</div>
+</div>
+<div class="admonition-relative-path-resolution exercise important admonition" id="exercise-2">
+<p class="admonition-title">Relative Path Resolution</p>
+<p>Using the filesystem diagram below, if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/thing</span></code>,
+what will <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">../backup</span></code> display?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">../backup:</span> <span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012-12-01</span> <span class="pre">2013-01-08</span> <span class="pre">2013-01-27</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012-12-01/</span> <span class="pre">2013-01-08/</span> <span class="pre">2013-01-27/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">original/</span> <span class="pre">pnas_final/</span> <span class="pre">pnas_sub/</span></code></p></li>
+</ol>
+<p><img alt="" src="../_images/filesystem-challenge.svg" />{alt=’A directory tree below the Users directory where “/Users” contains the directories “backup” and “thing”; “/Users/backup” contains “original”,”pnas_final” and “pnas_sub”; “/Users/thing” contains “backup”; and”/Users/thing/backup” contains “2012-12-01”, “2013-01-08” and”2013-01-27”’}</p>
+<div class="admonition-solution solution important dropdown admonition" id="solution-3">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>No: there <em>is</em> a directory <code class="docutils literal notranslate"><span class="pre">backup</span></code> in <code class="docutils literal notranslate"><span class="pre">/Users</span></code>.</p></li>
+<li><p>No: this is the content of <code class="docutils literal notranslate"><span class="pre">Users/thing/backup</span></code>,
+but with <code class="docutils literal notranslate"><span class="pre">..</span></code>, we asked for one level further up.</p></li>
+<li><p>No: see previous explanation.</p></li>
+<li><p>Yes: <code class="docutils literal notranslate"><span class="pre">../backup/</span></code> refers to <code class="docutils literal notranslate"><span class="pre">/Users/backup/</span></code>.</p></li>
+</ol>
+</div>
+</div>
+<p>````{challenge} <code class="docutils literal notranslate"><span class="pre">ls</span></code> Reading Comprehension</p>
+<p>Using the filesystem diagram below,
+if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/backup</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">-r</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to display things in reverse order,
+what command(s) will result in the following output:</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">pnas_sub/ pnas_final/ original/</span>
+</pre></div>
+</div>
+<p><img alt="" src="../_images/filesystem-challenge.svg" />{alt=’A directory tree below the Users directory where “/Users” contains the directories “backup” and “thing”; “/Users/backup” contains “original”,”pnas_final” and “pnas_sub”; “/Users/thing” contains “backup”; and”/Users/thing/backup” contains “2012-12-01”, “2013-01-08” and”2013-01-27”’}</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">pwd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-r</span> <span class="pre">-F</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-r</span> <span class="pre">-F</span> <span class="pre">/Users/backup</span></code></p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-4">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>No: <code class="docutils literal notranslate"><span class="pre">pwd</span></code> is not the name of a directory.</p></li>
+<li><p>Yes: <code class="docutils literal notranslate"><span class="pre">ls</span></code> without directory argument lists files and directories
+in the current directory.</p></li>
+<li><p>Yes: uses the absolute path explicitly.</p></li>
+</ol>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="general-syntax-of-a-shell-command">
+<h2>General Syntax of a Shell Command<a class="headerlink" href="#general-syntax-of-a-shell-command" title="Link to this heading"></a></h2>
+<p>We have now encountered commands, options, and arguments,
+but it is perhaps useful to formalise some terminology.</p>
+<p>Consider the command below as a general example of a command,
+which we will dissect into its component parts:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>/
+</pre></div>
+</div>
+<p><img alt="" src="../_images/shell_command_syntax.svg" />{alt=’General syntax of a shell command’}</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> is the <strong>command</strong>, with an <strong>option</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code> and an
+<strong>argument</strong> <code class="docutils literal notranslate"><span class="pre">/</span></code>.
+We’ve already encountered options  which
+either start with a single dash (<code class="docutils literal notranslate"><span class="pre">-</span></code>), known as <strong>short options</strong>,
+or two dashes (<code class="docutils literal notranslate"><span class="pre">--</span></code>), known as <strong>long options</strong>.
+[Options] change the behavior of a command and
+<a class="reference external" href="https://swcarpentry.github.io/shell-novice/reference.html#argument">Arguments</a> tell the command what to operate on (e.g. files and directories).
+Sometimes options and arguments are referred to as <strong>parameters</strong>.
+A command can be called with more than one option and more than one argument, but a
+command doesn’t always require an argument or an option.</p>
+<p>You might sometimes see options being referred to as <strong>switches</strong> or <strong>flags</strong>,
+especially for options that take no argument. In this lesson we will stick with
+using the term <em>option</em>.</p>
+<p>Each part is separated by spaces. If you omit the space
+between <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">-F</span></code> the shell will look for a command called <code class="docutils literal notranslate"><span class="pre">ls-F</span></code>, which
+doesn’t exist. Also, capitalization can be important.
+For example, <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-s</span></code> will display the size of files and directories alongside the names,
+while <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-S</span></code> will sort the files and directories by size, as shown below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/Desktop/shell-lesson-data
+<span class="gp">$ </span>ls<span class="w"> </span>-s<span class="w"> </span>exercise-data
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">total 28</span>
+<span class="go"> 4 animal-counts   4 creatures  12 numbers.txt   4 alkanes   4 writing</span>
+</pre></div>
+</div>
+<p>Note that the sizes returned by <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-s</span></code> are in <em>blocks</em>.
+As these are defined differently for different operating systems,
+you may not obtain the same figures as in the example.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-S<span class="w"> </span>exercise-data
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">animal-counts  creatures  alkanes  writing  numbers.txt</span>
+</pre></div>
+</div>
+<p>Putting all that together, our command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">/</span></code> above gives us a listing
+of files and directories in the root directory <code class="docutils literal notranslate"><span class="pre">/</span></code>.
+An example of the output you might get from the above command is given below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-F<span class="w"> </span>/
+</pre></div>
+</div>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Applications/         System/</span>
+<span class="go">Library/              Users/</span>
+<span class="go">Network/              Volumes/</span>
+</pre></div>
+</div>
+<section id="nelle-s-pipeline-organizing-files">
+<h3>Nelle’s Pipeline: Organizing Files<a class="headerlink" href="#nelle-s-pipeline-organizing-files" title="Link to this heading"></a></h3>
+<p>Knowing this much about files and directories,
+Nelle is ready to organize the files that the protein assay machine will create.</p>
+<p>She creates a directory called <code class="docutils literal notranslate"><span class="pre">north-pacific-gyre</span></code>
+(to remind herself where the data came from),
+which will contain the data files from the assay machine
+and her data processing scripts.</p>
+<p>Each of her physical samples is labelled according to her lab’s convention
+with a unique ten-character ID,
+such as ‘NENE01729A’.
+This ID is what she used in her collection log
+to record the location, time, depth, and other characteristics of the sample,
+so she decides to use it within the filename of each data file.
+Since the output of the assay machine is plain text,
+she will call her files <code class="docutils literal notranslate"><span class="pre">NENE01729A.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">NENE01812A.txt</span></code>, and so on.
+All 1520 files will go into the same directory.</p>
+<p>Now in her current directory <code class="docutils literal notranslate"><span class="pre">shell-lesson-data</span></code>,
+Nelle can see what files she has using the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>north-pacific-gyre/
+</pre></div>
+</div>
+<p>This command is a lot to type,
+but she can let the shell do most of the work through what is called <strong>tab completion</strong>.
+If she types:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>nor
+</pre></div>
+</div>
+<p>and then presses <kbd>Tab</kbd> (the tab key on her keyboard),
+the shell automatically completes the directory name for her:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>north-pacific-gyre/
+</pre></div>
+</div>
+<p>Pressing <kbd>Tab</kbd> again does nothing,
+since there are multiple possibilities;
+pressing <kbd>Tab</kbd> twice brings up a list of all the files.</p>
+<p>If Nelle then presses <kbd>G</kbd> and then presses <kbd>Tab</kbd> again,
+the shell will append ‘goo’ since all files that start with ‘g’ share
+the first three characters ‘goo’.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>north-pacific-gyre/goo
+</pre></div>
+</div>
+<p>To see all of those files, she can press <kbd>Tab</kbd> twice more.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ls north-pacific-gyre/goo</span>
+<span class="go">goodiff.sh   goostats.sh</span>
+</pre></div>
+</div>
+<p>This is called <strong>tab completion</strong>,
+and we will see it in many other tools as we go on.</p>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>The file system is responsible for managing information on the disk.</p></li>
+<li><p>Information is stored in files, which are stored in directories (folders).</p></li>
+<li><p>Directories can also store other directories, which then form a directory tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> prints the user’s current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">[path]</span></code> prints a listing of a specific file or directory; <code class="docutils literal notranslate"><span class="pre">ls</span></code> on its own lists the current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[path]</span></code> changes the current working directory.</p></li>
+<li><p>Most commands take options that begin with a single <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p></li>
+<li><p>Directory names in a path are separated with <code class="docutils literal notranslate"><span class="pre">/</span></code> on Unix, but <code class="docutils literal notranslate"><span class="pre">\</span></code> on Windows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> on its own is the root directory of the whole file system.</p></li>
+<li><p>An absolute path specifies a location from the root of the file system.</p></li>
+<li><p>A relative path specifies a location starting from the current location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> on its own means ‘the current directory’; <code class="docutils literal notranslate"><span class="pre">..</span></code> means ‘the directory above the current one’.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../shell_intro/" class="btn btn-neutral float-left" title="Introducing the shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../guide/" class="btn btn-neutral float-right" title="Instructor guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
